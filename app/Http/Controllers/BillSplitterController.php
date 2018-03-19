@@ -6,7 +6,7 @@ class BillSplitterController extends Controller
 {
     public function index()
     {
-        return 'You are viewing the page that will have the Bill Splittter form.';
+        return view('splitter.index');
     }
 
     public function splitBill()
