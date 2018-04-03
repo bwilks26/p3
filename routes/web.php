@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'BillSplitterController@index');
+Route::get('/', 'BillSplitterController@splitterForm');
 
 Route::get('/split-bill', 'BillSplitterController@splitBill');
 
