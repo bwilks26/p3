@@ -13,12 +13,12 @@
             <form method='GET' action='/split-bill'>
                 <div class='row-fluid'>
                     <label>Split how many ways?</label>
-                    <input type='text' name='splitTerm' placeholder='Required*' value='{{ $splitTerm or '' }}'/>
+                    <input type='text' name='splitTerm' placeholder='Required*' value='{{ ($errors->has('splitTerm')) ? old('splitTerm') : $splitTerm }}'/>
                     @include('modules.error-field', ['field' => 'splitTerm'])
                 </div>
                 <div class='row-fluid'>
                     <label>How much was the tab?</label>
-                    <input type='text' name='billAmount' placeholder='Required*' value='{{ $billAmount or '' }}'/>
+                    <input type='text' name='billAmount' placeholder='Required*' value='{{ ($errors->has('billAmount')) ? old('billAmount') : $billAmount }}'/>
                     @include('modules.error-field', ['field' => 'billAmount'])
                 </div>
 

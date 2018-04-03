@@ -6,16 +6,22 @@ use Illuminate\Http\Request;
 
 class BillSplitterController extends Controller
 {
-    public function splitterForm()
+    public function splitterForm(Request $request)
     {
-        return view('forms.splitterForm', ['result' => '', 'tipAmount' => '', 'roundUp' => '']);
+        return view('forms.splitterForm')->with([
+            'splitTerm' => '',
+            'billAmount' => '',
+            'tipAmount' => '',
+            'roundUp' => '',
+            'result' => ''
+        ]);
     }
 
     public function splitBill(Request $request)
     {
         if ($request->has('splitTerm') && $request->has('billAmount')) {
-            $splitTerm = $request->input('splitTerm', null);
-            $billAmount = $request->input('billAmount', null);
+            $splitTerm = $request->input('splitTerm');
+            $billAmount = $request->input('billAmount');
             $tipAmount = $request->input('tipAmount', 0);
             $roundUp = $request->has('roundUp');
 
