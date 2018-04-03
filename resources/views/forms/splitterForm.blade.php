@@ -13,12 +13,18 @@
             <form method='GET' action='/split-bill'>
                 <div class='row-fluid'>
                     <label>Split how many ways?</label>
-                    <input type='text' name='splitTerm' placeholder='Required*' value='{{ ($errors->has('splitTerm')) ? old('splitTerm') : $splitTerm }}'/>
+                    <input type='text'
+                           name='splitTerm'
+                           placeholder='Required*'
+                           value='{{ ($errors->has('splitTerm')) ? old('splitTerm') : $splitTerm }}'/>
                     @include('modules.error-field', ['field' => 'splitTerm'])
                 </div>
                 <div class='row-fluid'>
                     <label>How much was the tab?</label>
-                    <input type='text' name='billAmount' placeholder='Required*' value='{{ ($errors->has('billAmount')) ? old('billAmount') : $billAmount }}'/>
+                    <input type='text'
+                           name='billAmount'
+                           placeholder='Required*'
+                           value='{{ ($errors->has('billAmount')) ? old('billAmount') : $billAmount }}'/>
                     @include('modules.error-field', ['field' => 'billAmount'])
                 </div>
 
@@ -36,13 +42,15 @@
                         <option value='25' @if($tipAmount == '25') selected='selected' @endif>Outstanding (25%)</option>
                     </select>
 
-                    <div class='row-fluid'>
-                        <label>Round up?</label>
-                        <input type='checkbox' name='roundUp' @if($roundUp) checked='checked' @endif/>
-                    </div>
+                </div>
+
+                <div class='row-fluid'>
+                    <label>Round up?</label>
+                    <input type='checkbox' name='roundUp' @if($roundUp) checked='checked' @endif/>
+                </div>
 
 
-                    <input type='submit' value='Calculate'>
+                <input type='submit' value='Calculate'>
             </form>
         </div>
     </div>
